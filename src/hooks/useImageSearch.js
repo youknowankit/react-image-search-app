@@ -19,7 +19,7 @@ function useImageSearch() {
   }, []);
 
   //Handle user searches
-  const handleSearch = async (searchQuery) => {
+  const searchImages = async (searchQuery) => {
     try {
       //Preserve data for infinite scroll
       setQuery(searchQuery);
@@ -60,7 +60,7 @@ function useImageSearch() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [query, page, loading]);
-  return { images, loading, handleSearch };
+  return { images, loading, searchImages };
 }
 
 export default useImageSearch;

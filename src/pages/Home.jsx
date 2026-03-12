@@ -4,15 +4,14 @@ import ImageGrid from "../components/ImageGrid";
 import useImageSearch from "../hooks/useImageSearch";
 
 function Home() {
-  const { images, handleSearch } = useImageSearch();
+  const { images, searchImages } = useImageSearch();
 
   return (
     <>
-      <Navbar />
+      <Navbar onSearch={searchImages} />
 
       <div className="max-w-7xl mx-auto px-6 py-10 space-y-10">
-        <SearchBar onSearch={handleSearch} />
-
+        <SearchBar onSearch={searchImages} />
         <ImageGrid images={images} />
       </div>
     </>
