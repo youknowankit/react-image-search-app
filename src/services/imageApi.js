@@ -1,4 +1,4 @@
-const ACCESS_KEY = "_tREv4PaA155X9NeFKjMtGsziaEb2VRjJti-kdknPGo";
+const ACCESS_KEY = import.meta.env.VITE_API_KEY;
 
 export async function searchImagesApi(query, page = 1) {
   const response = await fetch(
